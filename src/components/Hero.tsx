@@ -1,15 +1,51 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { TypeAnimation } from 'react-type-animation';
-import { ArrowDown, Download, ExternalLink, Github, Linkedin, Twitter } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import { TypeAnimation } from "react-type-animation";
+import {
+  ArrowDown,
+  Download,
+  ExternalLink,
+  Github,
+  Linkedin,
+  Twitter,
+} from "lucide-react";
 
 const Hero = () => {
   const scrollToNext = () => {
-    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const downloadResume = async () => {
+    try {
+      // Google Drive file ID from the URL
+      const fileId = "1wVDbqB48IjpX6340tKWuxkGglhv_BJpx";
+      const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
+
+      // Create a temporary link element
+      const link = document.createElement("a");
+      link.href = downloadUrl;
+      link.download = "Sahil_Siddiqui_Resume.pdf";
+      link.target = "_blank";
+
+      // Append to body, click, and remove
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      console.error("Error downloading resume:", error);
+      // Fallback: open in new tab
+      window.open(
+        "https://drive.google.com/file/d/1wVDbqB48IjpX6340tKWuxkGglhv_BJpx/view?usp=sharing",
+        "_blank"
+      );
+    }
   };
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative pt-20">
+    <section
+      id="hero"
+      className="min-h-screen flex items-center justify-center relative pt-20"
+    >
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -44,13 +80,13 @@ const Hero = () => {
               <div className="text-xl md:text-3xl lg:text-4xl font-semibold mb-8 h-16 flex items-center justify-center lg:justify-start">
                 <TypeAnimation
                   sequence={[
-                    'Senior Frontend Developer',
+                    "Senior Frontend Developer",
                     2000,
-                    'React Specialist',
+                    "React Specialist",
                     2000,
-                    'JavaScript Expert',
+                    "JavaScript Expert",
                     2000,
-                    'UI/UX Enthusiast',
+                    "UI/UX Enthusiast",
                     2000,
                   ]}
                   wrapper="span"
@@ -67,9 +103,10 @@ const Hero = () => {
                 transition={{ delay: 1.2 }}
                 className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed"
               >
-                With 5+ years of experience crafting exceptional digital experiences. 
-                Specialized in React, Javascript, TypeScript, and modern frontend technologies. 
-                Based in Bengaluru, open to remote opportunities worldwide.
+                With 5+ years of experience crafting exceptional digital
+                experiences. Specialized in React, Javascript, TypeScript, and
+                modern frontend technologies. Based in Bengaluru, open to remote
+                opportunities worldwide.
               </motion.p>
 
               {/* CTA Buttons */}
@@ -82,23 +119,26 @@ const Hero = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-gradient-to-r from-blue-500 to-emerald-500 text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
-                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-emerald-500 text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 justify-center"
+                  onClick={() =>
+                    document
+                      .getElementById("contact")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
                 >
                   <span>Get In Touch</span>
                   <ExternalLink size={20} />
                 </motion.button>
 
-                <motion.a
+                <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  href="/resume.pdf"
-                  download
-                  className="border-2 border-blue-400 text-blue-400 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-400 hover:text-gray-900 transition-all duration-300 flex items-center gap-2 justify-center"
+                  onClick={downloadResume}
+                  className="w-full sm:w-auto border-2 border-blue-400 text-blue-400 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-400 hover:text-gray-900 transition-all duration-300 flex items-center gap-2 justify-center"
                 >
                   <Download size={20} />
                   <span>Download Resume</span>
-                </motion.a>
+                </motion.button>
               </motion.div>
 
               {/* Social Links */}
@@ -143,12 +183,12 @@ const Hero = () => {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="flex justify-center lg:justify-end"
+              className="hidden lg:flex justify-center lg:justify-end"
             >
               <div className="relative group">
                 {/* Background Effects */}
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-emerald-600 rounded-2xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-300" />
-                
+
                 {/* Main Image Container */}
                 <motion.div
                   whileHover={{ scale: 1.05 }}
@@ -163,7 +203,7 @@ const Hero = () => {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, delay: 0.5 }}
                     />
-                    
+
                     {/* Professional Badge */}
                     <motion.div
                       initial={{ opacity: 0, y: -20 }}
@@ -173,7 +213,7 @@ const Hero = () => {
                     >
                       Senior Frontend Developer
                     </motion.div>
-                    
+
                     {/* Experience Badge */}
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
@@ -185,43 +225,43 @@ const Hero = () => {
                     </motion.div>
                   </div>
                 </motion.div>
-                
+
                 {/* Floating Elements */}
                 <motion.div
-                  animate={{ 
+                  animate={{
                     y: [-10, 10, -10],
-                    rotate: [0, 180, 360]
+                    rotate: [0, 180, 360],
                   }}
-                  transition={{ 
+                  transition={{
                     duration: 4,
                     repeat: Infinity,
-                    ease: "easeInOut"
+                    ease: "easeInOut",
                   }}
                   className="absolute -top-4 -right-4 w-8 h-8 bg-blue-400 rounded-full opacity-80 shadow-lg"
                 />
-                
+
                 <motion.div
-                  animate={{ 
+                  animate={{
                     y: [10, -10, 10],
-                    rotate: [360, 180, 0]
+                    rotate: [360, 180, 0],
                   }}
-                  transition={{ 
+                  transition={{
                     duration: 5,
                     repeat: Infinity,
-                    ease: "easeInOut"
+                    ease: "easeInOut",
                   }}
                   className="absolute -bottom-6 -left-6 w-6 h-6 bg-emerald-400 rounded-full opacity-80 shadow-lg"
                 />
-                
+
                 <motion.div
-                  animate={{ 
+                  animate={{
                     x: [-5, 5, -5],
-                    y: [5, -5, 5]
+                    y: [5, -5, 5],
                   }}
-                  transition={{ 
+                  transition={{
                     duration: 3,
                     repeat: Infinity,
-                    ease: "easeInOut"
+                    ease: "easeInOut",
                   }}
                   className="absolute top-1/2 -left-8 w-4 h-4 bg-purple-400 rounded-full opacity-60 shadow-lg"
                 />

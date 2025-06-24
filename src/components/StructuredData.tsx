@@ -1,28 +1,29 @@
-import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import React from "react";
+import { Helmet } from "react-helmet-async";
 
 const StructuredData: React.FC = () => {
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Sahil Siddiqui",
-    "jobTitle": "Senior Frontend Developer",
-    "description": "Senior Frontend Developer with 5+ years experience in React, TypeScript, and modern web technologies",
-    "url": "https://sahilsiddiqui.dev",
-    "image": "https://sahilsiddiqui.dev/Sahil-Final.png",
-    "email": "sahilsiddiquihere@gmail.com",
-    "telephone": "+91-9561706100",
-    "address": {
+    name: "Sahil Siddiqui",
+    jobTitle: "Senior Frontend Developer",
+    description:
+      "Senior Frontend Developer with 5+ years experience in React, TypeScript, and modern web technologies",
+    url: "https://sahilsiddiqui.xyz",
+    image: "https://sahilsiddiqui.xyz/Sahil-Final.png",
+    email: "sahilsiddiquihere@gmail.com",
+    telephone: "+91-9561706100",
+    address: {
       "@type": "PostalAddress",
-      "addressLocality": "Bengaluru",
-      "addressCountry": "India"
+      addressLocality: "Bengaluru",
+      addressCountry: "India",
     },
-    "sameAs": [
+    sameAs: [
       "https://www.linkedin.com/in/sahil-siddiqui-senior-frontend-developer/",
       "https://github.com/funnyBonesWare",
-      "https://x.com/_SahilSiddiqui"
+      "https://x.com/_SahilSiddiqui",
     ],
-    "knowsAbout": [
+    knowsAbout: [
       "React",
       "TypeScript",
       "JavaScript",
@@ -36,104 +37,104 @@ const StructuredData: React.FC = () => {
       "SASS",
       "Responsive Design",
       "Performance Optimization",
-      "Team Leadership"
+      "Team Leadership",
     ],
-    "worksFor": {
+    worksFor: {
       "@type": "Organization",
-      "name": "Elocity Technologies"
+      name: "Elocity Technologies",
     },
-    "alumniOf": {
+    alumniOf: {
       "@type": "Organization",
-      "name": "Wipro"
-    }
+      name: "Wipro",
+    },
   };
 
   const professionalServiceSchema = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Sahil Siddiqui - Frontend Development Services",
-    "description": "Professional frontend development services specializing in React, TypeScript, and modern web technologies",
-    "provider": {
+    name: "Sahil Siddiqui - Frontend Development Services",
+    description:
+      "Professional frontend development services specializing in React, TypeScript, and modern web technologies",
+    provider: {
       "@type": "Person",
-      "name": "Sahil Siddiqui"
+      name: "Sahil Siddiqui",
     },
-    "areaServed": "Worldwide",
-    "serviceType": "Frontend Development",
-    "url": "https://sahilsiddiqui.dev"
+    areaServed: "Worldwide",
+    serviceType: "Frontend Development",
+    url: "https://sahilsiddiqui.xyz",
   };
 
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Sahil Siddiqui Portfolio",
-    "description": "Professional portfolio of Sahil Siddiqui, Senior Frontend Developer",
-    "url": "https://sahilsiddiqui.dev",
-    "author": {
+    name: "Sahil Siddiqui Portfolio",
+    description:
+      "Professional portfolio of Sahil Siddiqui, Senior Frontend Developer",
+    url: "https://sahilsiddiqui.xyz",
+    author: {
       "@type": "Person",
-      "name": "Sahil Siddiqui"
+      name: "Sahil Siddiqui",
     },
-    "inLanguage": "en-US",
-    "copyrightYear": "2024",
-    "copyrightHolder": {
+    inLanguage: "en-US",
+    copyrightYear: "2024",
+    copyrightHolder: {
       "@type": "Person",
-      "name": "Sahil Siddiqui"
-    }
+      name: "Sahil Siddiqui",
+    },
   };
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": [
+    itemListElement: [
       {
         "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://sahilsiddiqui.dev/"
+        position: 1,
+        name: "Home",
+        item: "https://sahilsiddiqui.xyz/",
       },
       {
         "@type": "ListItem",
-        "position": 2,
-        "name": "About",
-        "item": "https://sahilsiddiqui.dev/#about"
+        position: 2,
+        name: "About",
+        item: "https://sahilsiddiqui.xyz/#about",
       },
       {
         "@type": "ListItem",
-        "position": 3,
-        "name": "Experience",
-        "item": "https://sahilsiddiqui.dev/#experience"
+        position: 3,
+        name: "Experience",
+        item: "https://sahilsiddiqui.xyz/#experience",
       },
       {
         "@type": "ListItem",
-        "position": 4,
-        "name": "Skills",
-        "item": "https://sahilsiddiqui.dev/#skills"
+        position: 4,
+        name: "Skills",
+        item: "https://sahilsiddiqui.xyz/#skills",
       },
       {
         "@type": "ListItem",
-        "position": 5,
-        "name": "Projects",
-        "item": "https://sahilsiddiqui.dev/#projects"
+        position: 5,
+        name: "Projects",
+        item: "https://sahilsiddiqui.xyz/#projects",
       },
       {
         "@type": "ListItem",
-        "position": 6,
-        "name": "Blog",
-        "item": "https://sahilsiddiqui.dev/#blog"
+        position: 6,
+        name: "Blog",
+        item: "https://sahilsiddiqui.xyz/#blog",
       },
       {
         "@type": "ListItem",
-        "position": 7,
-        "name": "Contact",
-        "item": "https://sahilsiddiqui.dev/#contact"
-      }
-    ]
+        position: 7,
+        name: "Contact",
+        item: "https://sahilsiddiqui.xyz/#contact",
+      },
+    ],
   };
 
   return (
     <Helmet>
-      <script type="application/ld+json">
-        {JSON.stringify(personSchema)}
-      </script>
+      <script type="application/ld+json">{JSON.stringify(personSchema)}</script>
       <script type="application/ld+json">
         {JSON.stringify(professionalServiceSchema)}
       </script>

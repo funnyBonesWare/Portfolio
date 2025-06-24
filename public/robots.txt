@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://sahilsiddiqui.dev/sitemap.xml
+Sitemap: https://sahilsiddiqui.xyz/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 1
